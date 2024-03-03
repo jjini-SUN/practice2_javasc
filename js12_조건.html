@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+  <style>
+    body {
+      margin:0;
+    }
+
+    /*
+    로고는 왼쪽에
+    리스트는 오른쪽에 1열로
+    padding
+    */
+    .top-nav {
+      background:lightgrey;
+      display:flex;
+      justify-content:space-between;
+      align-items: center;
+      padding:15px;
+    }
+    .top-nav li {
+      padding:0px 50px; /*상하0, 좌우 50*/
+      display:inline-block;
+      font-weight: bold;
+    }
+    .top-nav h2,
+    .top-nav ul {
+      margin:0;
+    }
+    
+    .bottom-nav {
+      background:black;
+      display:flex;
+      height:0;
+      visibility:hidden; 
+      z-index:5; /*안보일 때 공간 안차지하도록 z축으로 띄움*/
+    }
+    .bottom-nav div {
+      width:25%;
+      padding:25px;
+      color:white;
+      /*outline:1px solid;*/
+    }
+    .bottom-nav li {
+      list-style-type: none;
+    }
+    .bottom-nav li:hover{
+      text-decoration: underline;
+    }
+    .bottom-nav h3,
+    .bottom-nav ul {
+      margin:0;
+      padding:0px 0px 15px 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--네이게이션 : 로고-->
+  <div class = "top-nav">
+    <h2 id = "top-logo">로고</h2>
+    <ul>
+      <li>커피</li>
+      <li>라떼</li>
+      <li>주스</li>
+      <li>티</li>
+    </ul>
+  </div>
+  
+  <div class = "bottom-nav" id = "down-nav">
+    <div>
+      <h3>커피</h3>
+      <ul>
+        <li>아메리카노</li>
+        <li>에스프레소</li>
+        <li>카라멜 마끼아또</li>
+        <li>아인슈페너</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>라떼</h3>
+      <ul>
+        <li>딸기라떼</li>
+        <li>달고나라떼</li>
+        <li>타로라떼</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>주스</h3>
+      <ul>
+        <li>오렌지 주스</li>
+        <li>토마토 주스</li>
+        <li>망고 주스</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>티</h3>
+      <ul>
+        <li>그린티</li>
+        <li>제주 유기농 녹차</li>
+        <li>캐모마일</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <script>
+    var down_nav_flag = 0
+    document.getElementById('top-logo').addEventListener('click', function() {
+      if(down_nav_flag === 0) {
+        down_nav_flag = 1
+        document.getElementById('down-nav').style.height = 'auto'
+        document.getElementById('down-nav').style.visibility = 'visible'
+      }
+      else if (down_nav_flag === 1) {
+        down_nav_flag = 0
+        document.getElementById('down-nav').style.height = '0'
+      }
+    })
+  </script>
+</body>
+</html>
