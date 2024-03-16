@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다크모드</title>
+  <style>
+    .screen {
+      width:800px;
+      height:210px;
+      border:1px solid black;
+    }
+    .screen-top {
+      display:flex;
+      justify-content: space-between;
+      padding:20px;
+    }
+    .screen-top h2 {
+      margin:0;
+    }
+    .mode-button {
+      height:40px;
+      border-radius:10px;
+      padding:10px;
+    }
+    .screen-bottom {
+      padding:30px;
+    }
+    .screen-bottom h4 {
+      margin:0;
+    }
+
+    .back-white {
+      background:white;
+      color:black;
+    }
+    .back-black {
+      background:black;
+      color:white;
+    }
+  </style>
+</head>
+<body>
+  <div class = "screen">
+    <div class = "screen-top back-white" id = "screen-top">
+      <h2>JavaScript</h2>
+      <button class = "mode-button back-black" id = "mode-btn">다크모드</button>
+    </div>
+    <div class = "screen-bottom back-white" id = "screen-bottom">
+      <form>
+        <h4>올해 년도는?</h4><br>
+        <input type = "text" id = "submit-text">
+        <input type = "submit" class = "back-white" id = "submit-btn">
+      </form>
+    </div>
+  
+  <script>
+    var 모드 = 0
+    document.getElementById('mode-btn').addEventListener('click', function() {
+      모드++
+      //모드가 짝수면 라이트모드, 홀수면 다크모드
+      if(모드 % 2=== 0) {
+        document.getElementById('screen-top').classList.remove('back-black')
+        document.getElementById('screen-top').classList.add('back-white')
+        document.getElementById('screen-bottom').classList.remove('back-black')
+        document.getElementById('screen-bottom').classList.add('back-white')
+        document.getElementById('mode-btn').classList.remove('back-white')
+        document.getElementById('mode-btn').classList.add('back-black')
+        document.getElementById('mode-btn').innerHTML = "다크 모드"
+      }
+      else {
+        //back-white를 떼고 back-black을 추가시켜라 (단, 다크모드 버튼은 반대로)
+        document.getElementById('screen-top').classList.remove('back-white')
+        document.getElementById('screen-top').classList.add('back-black')
+        document.getElementById('screen-bottom').classList.remove('back-white')
+        document.getElementById('screen-bottom').classList.add('back-black')
+        document.getElementById('mode-btn').classList.remove('back-black')
+        document.getElementById('mode-btn').classList.add('back-white')
+        document.getElementById('mode-btn').innerHTML = "라이트 모드"
+      }
+    })
+
+    //제출버튼을 누르면
+    //input의 내용이 2024와 같았다면 alert("정답입니다")
+    //input의 내용이 2024와 같지 않았다면 alert("오답입니다")
+    function 답검사() {
+      let 입력값 = document.getElementById('submit-text').value;
+      if (입력값 === "2024") {
+        alert("정답입니다") //맞으면
+      }
+      else {
+        alert("오답입니다") //틀리면
+      }
+    }
+    document.getElementById('submit-btn').addEventListener('click', 답검사)
+  </script>
+</body>
+</html>
