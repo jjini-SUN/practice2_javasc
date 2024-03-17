@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문실습2</title>
+  <style>
+    body {
+      margin:0;
+    }
+
+    .slider-container {
+      overflow:hidden;
+      width:500px;
+      height:300px;
+      margin:auto;
+    }
+
+    .slider-img {
+      display:flex;
+      /*width: 슬라이드 개수 * 100%*/
+      width:300%;
+      transition: all 1s;
+    }
+
+    .box {
+      width:100%;
+    }
+    .box img {
+      width:100%;
+    }
+
+    .slider-page-1 {
+      margin-left:0;
+    }
+    .slider-page-2 {
+      margin-left:-100%;
+    }
+    .slider-page-3 {
+      margin-left:-200%;
+    }
+
+    button {
+      width:50px;
+    }
+  </style>
+</head>
+<body>
+  <!--slider-container : 슬라이더의 크기를 결정-->
+  <div class = "slider-container">
+    <div class = "slider-img slider-first">
+
+      <div class = "box">
+        <img src = "./img/spring.png" alt = "">
+      </div>
+
+      <div class = "box">
+        <img src = "./img/fall.png" alt = "">
+      </div>
+
+      <div class = "box">
+        <img src = "./img/winter.png" alt = "">
+      </div>
+
+    </div>
+  </div>
+
+  <button id = "slide-btn-1">spring</button>
+  <button id = "slide-btn-2">fall</button>
+  <button id = "slide-btn-3">winter</button>
+</body>
+
+
+<script>
+  /*
+  document.getElementById('slide-btn-1').addEventListener('click', function() {
+    //slider-img에다가 slider-first 클래스 추가
+    document.querySelector('.slider-img').classList.remove('slider-page-1', 'slider-page-2', 'slider-page-3')
+    document.querySelector('.slider-img').classList.add('slider-page-1')
+  })
+  document.getElementById('slide-btn-2').addEventListener('click', function() {
+    //slider-img에다가 slider-second 클래스 추가
+    document.querySelector('.slider-img').classList.remove('slider-page-1', 'slider-page-2', 'slider-page-3')
+    document.querySelector('.slider-img').classList.add('slider-page-2')
+  })
+  document.getElementById('slide-btn-3').addEventListener('click', function() {
+    //slider-img에다가 slider-third 클래스 추가
+    document.querySelector('.slider-img').classList.remove('slider-page-1', 'slider-page-2', 'slider-page-3')
+    document.querySelector('.slider-img').classList.add('slider-page-3')
+  })
+  */
+
+  for(let i = 1; i <=3; i++) {
+    document.getElementById(`slide-btn-${i}`).addEventListener('click', function() {
+      //slider-img에다가 slider-first 클래스 추가
+      document.querySelector('.slider-img').classList.remove('slider-page-1', 'slider-page-2', 'slider-page-3');
+      document.querySelector('.slider-img').classList.add(`slider-page-${i}`);
+  })
+  }
+
+</script>
+</html>

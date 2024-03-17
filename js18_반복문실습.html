@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문 실습</title>
+  <style>
+    .whole {
+      /*background:grey;*/
+      width:600px;
+      height:300px;
+    }
+
+    .nav {
+      width:100%;
+      height:20%;
+    }
+    .nav li{
+      width:199px;
+      height:39px;
+      list-style-type: none;
+      display:inline-block;
+      font-size:16px;
+      font-weight: bold;
+      text-align: center;
+      padding-top:20px;
+      border-bottom:1px solid lightgrey;
+    }
+    .tab-selected {
+      border-top:2px solid orange;
+      border-bottom:0 !important;
+      border-left:1px solid lightgrey;
+      border-right:1px solid lightgrey;
+    }
+    .nav ul {
+      margin:0;
+      padding:0;
+      font-size:0;
+    }
+
+    .paragraph {
+      padding-top:10px;
+      width:100%;
+      height:80%;
+    }
+    
+    .display-none {
+      display:none;
+    }
+  </style>
+</head>
+<body>
+  <div class = "whole">
+    <div class = "nav">
+      <ul>
+        <li class = "tab_button tab-selected">tab1</li>
+        <li class = "tab_button">tab2</li>
+        <li class = "tab_button">tab3</li>
+      </ul>
+    </div>
+    
+    <div class = "paragraph">
+      탭 1 내용
+    </div>
+    <div class = "paragraph display-none">
+      탭 2 내용
+    </div>
+    <div class = "paragraph display-none">
+      탭 3 내용
+    </div>
+  </div>
+    
+  <script>
+    var 탭버튼개수 = document.querySelectorAll('.tab_button').length
+    var 탭내용개수 = document.querySelectorAll('.paragraph').length
+
+    for(let j = 0; j < 탭버튼개수; j++) {
+      document.querySelectorAll('.tab_button')[j].addEventListener('click', function(){
+      //모든 paragraph 에다가 display-none을 붙여주고
+      //선택된 paragraph 에다가 display-none을 제거한다
+      //모든 tab_button의 tab-selected를 제거하고
+      //선택된 tab_button에 tab-selected를 추가한다
+        for(let i = 0; i < 탭내용개수; i++) {
+          document.querySelectorAll('.paragraph')[i].classList.add('display-none')
+          document.querySelectorAll('.tab_button')[i].classList.remove('tab-selected')
+        }
+        document.querySelectorAll('.paragraph')[j].classList.remove('display-none')
+        document.querySelectorAll('.tab_button')[j].classList.add('tab-selected')
+      })
+    }
+  </script>
+</body>
+</html>
