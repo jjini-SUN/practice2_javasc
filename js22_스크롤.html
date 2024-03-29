@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 이벤트</title>
+    <style>
+        body {
+            margin:0;
+            background:grey;
+        }
+
+        .container-nav {
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            background:beige;
+            z-index: 5;  /* position 변경 필요 */
+            position:fixed;  /* 내 화면을 따라다녀라 */
+            width:100%;  /* 원래 width100%로 나를 감싸고 있는 div가 z 설정으로 인해 사라져버려서 망가지므로 이 조건 주어야 함*/
+            height:70px;
+            box-sizing: border-box;  /**************************/
+            transition: all 0.5s
+        }
+        .container-nav h3 {
+            margin-left:20px;
+        }
+        .container-nav li{
+            list-style-type: none;
+            display:inline-block;
+            padding-right:40px;
+        }
+        .container-nav a {
+            text-decoration: none;
+            color:black;
+        }
+        .container-content{
+            height:800px;
+            border:2px solid yellowgreen;
+        }
+
+        .ads {
+            width:50px;
+            height:50px;
+            background:red;
+            position:sticky;
+            top:100px;
+            left:80%;
+        }
+
+        .sticky-box {
+            width:50px;
+            height:50px;
+            background:blue;
+            position:sticky;
+            top:100px;
+            left:70%;
+        }
+    </style>
+</head>
+<body>
+    <!--내 스크롤을 따라다니는 상단 네비게이션바-->
+    <!--내 스크롤을 따라다니는 박스-->
+    <div class = "container-nav">
+        <h3>로고</h3>
+        <ul>
+            <li><a href = "#">홈</a></li>
+            <li><a href = "#">소개</a></li>
+        </ul>
+    </div>
+
+    <div style = "height:70px;"></div>
+
+    <div class = "ads">광고</div>
+
+    <div class = "container-content">
+        <div class = "sticky-box">스티키</div>
+    </div>
+
+    <div class = "container-content">
+        <div class = "sticky-box">스티키</div>
+    </div>
+
+    <div class = "container-content">
+        <div class = "sticky-box">스티키</div>
+    </div>
+
+
+    <script>
+        var 스트롤위치 = 0
+        window.addEventListener('scroll', function() {
+            //스크롤이 200 밑으로 내려가면 fontSize를 12px로 변경, 글색도 변경
+            //200 위로 다시 올라가면 원상복구
+            스크롤위치 = window.scrollY
+            console.log(스크롤위치)
+
+            document.querySelector('.container-nav h3').style.fontSize = '12px'
+            //부드럽게 바뀌는 걸 원한다, css에 container-nav에 transition: all 0.5s
+        })
+        
+    </script>
+</body>
+</html>
