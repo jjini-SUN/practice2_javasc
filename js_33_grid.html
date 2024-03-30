@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin:0;
+    }
+    div, input, textarea {
+      box-sizing: border-box;
+    }
+
+    .grid-container {
+      display:grid;
+      width:300px;
+      height:300px;
+      grid-template-areas:
+      "위쪽 위쪽 위쪽"
+      "왼쪽 안쪽 안쪽"
+      "왼쪽 안쪽 안쪽"
+      ;
+    }
+    .grid-container div {
+      border:2px solid yellowgreen;
+    }
+    
+    .first {
+      grid-area:위쪽;
+    }
+    .second {
+      grid-area:왼쪽;
+    }
+    .third {
+      grid-area:안쪽;
+    }
+
+    @media screen and (max-width:768px) {
+      .grid-container {
+        display:grid;
+        width:300px;
+        height:300px;
+        grid-template-areas:
+        "위쪽"
+        "왼쪽"
+        "안쪽"
+        ;
+      }
+    }
+
+    .grid-layout {
+      display:grid;
+      width:300px;
+      height:300px;
+      grid-template-areas:
+      "하나 하나 둘"
+      "하나 하나 셋"
+      "넷 다섯 여섯"
+    }
+    .grid-layout div {
+      border:skyblue solid 2px;
+    }
+    .one {
+      grid-area: 하나;
+    }
+    .two {
+      grid-area: 둘;
+    }
+    .three {
+      grid-area: 셋;
+    }
+    .four {
+      grid-area: 넷;
+    }
+    .five {
+      grid-area: 다섯;
+    }
+    .six {
+      grid-area: 여섯;
+    }
+
+    @media  screen and (max-width:768px) {
+      .grid-layout {
+        display:grid;
+        width:300px;
+        height:300px;
+        grid-template-areas:
+        "하나"
+        "둘"
+        "셋"
+        "넷"
+        "다섯"
+        "여섯"
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class = "grid-container">
+    <div class = "first">1</div>
+    <div class = "second">2</div>
+    <div class = "third">3</div>
+  </div>
+
+  <hr><br>
+  <div class = "grid-layout">
+    <div class = "one"><img src = "https://picsum.photos/500?r=0" width = "100%" height = "100%"></div>
+    <div class = "two"><img src = "https://picsum.photos/500?r=1" width = "100%" height = "100%"></div>
+    <div class = "three"><img src = "https://picsum.photos/500?r=2" width = "100%" height = "100%"></div>
+    <div class = "four"><img src = "https://picsum.photos/500?r=3" width = "100%" height = "100%"></div>
+    <div  class = "five"><img src = "https://picsum.photos/500?r=4" width = "100%" height = "100%"></div>
+    <div class = "six"><img src = "https://picsum.photos/500?r=5" width = "100%" height = "100%"></div>
+  </div>
+  
+</body>
+</html>

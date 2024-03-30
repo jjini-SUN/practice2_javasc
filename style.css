@@ -1,0 +1,188 @@
+/*폰트, 마진 ...*/
+@font-face {
+  font-family: '나눔';
+  src:url(./NanumSquareAcR.woff2);
+}
+body {
+  font-family: '나눔';
+  margin:0;
+  padding:0;
+  background:black;
+}
+
+div, input, textarea {
+  box-sizing:border-box;
+}
+
+nav {
+  position:fixed;
+  z-index: 8;
+  width:100%;
+}
+.dump {
+  height:122px;
+}
+.top-nav {
+  background:rgb(246,245,239);
+}
+.top-nav-inner {
+  width:1100px;
+  height:120px;
+  margin:auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-nav {
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  height:55px;
+}
+.first-nav a{
+  text-decoration: none;
+  color: #555555;
+  display:inline-block;
+  border-right:1px solid lightgrey;
+  font-size:13px;
+  padding: 0px 20px;
+  margin-bottom:15px;
+}
+.no-border {
+  border-right:none !important;
+}
+.first-nav a:hover {
+  text-decoration: underline;
+}
+
+.second-nav {
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.second-nav a {
+  text-decoration: none;
+  color: #333333;
+  display:inline-block;
+  font-size:13px;
+  padding: 10px 15px 40px 15px;
+}
+.no-padding {
+  padding-right:30px !important;
+}
+.second-nav a:hover {
+  text-decoration: underline;
+  color:green;
+  background:rgb(44,42,41)
+}
+
+.down-nav {
+  background:rgb(44,42,41);
+  width:100%;
+  transition:all 0.5s;
+  height:0;
+  visibility:hidden;
+}
+.down-nav-inner {
+  width:1100px;
+  margin:auto;
+  color:white;
+  display:flex;
+  padding:15px;
+}
+.down-nav-inner div {
+  width:200px;
+}
+.down-nav-inner ul {
+  margin:0;
+  padding:0;
+}
+.down-nav-inner li {
+  list-style-type:none;
+  font-size:small;
+}
+
+.ADS {
+  position:fixed;
+  background-image:url(https://image.istarbucks.co.kr/upload/banner/floatingbnr/Mn0ecH_20220711153123340.png);
+  z-index:5;
+  top:30%;
+  left:80%;
+  width:140px;
+  height:96px;
+}
+
+.section-1 {
+  width:100%;
+  height:32vw;
+  background-image:url(./img/스벅메인슬로건.png);
+  background-position:center;
+  background-size:100% auto;
+  position:relative;
+}
+.section-1 .main-letter {
+  position:absolute;
+  left:200px;
+  top:25%;
+}
+.section-1 button {
+  position:absolute;
+  left:338px;
+  top:65%;
+  background:transparent;
+  border:2px darkgreen solid;
+  padding:10px;
+}
+
+.section-2 {
+  width:100%;
+  height:32vw;
+  background-image:url(./img/스벅봄섹션.png);
+  background-position:center;
+  background-size:100% auto;
+  background-repeat: no-repeat;
+}
+.section-3 {
+  width:100%;
+  height:32vw;
+  background-image:url(./img/스벅별섹션.png);
+  background-position:center;
+  background-size:100% auto;
+  background-repeat: no-repeat;
+}
+.section-4 {
+  width:100%;
+  height:32vw;
+  background-image:url(./img/스벅검은섹션.png);
+  background-position:center;
+  background-size:100% auto;
+}
+.section-5 {
+  width:100%;
+  height:32vw;
+  background-image:url(./img/스벅메인슬로건.png);
+  background-position:center;
+  background-size:100% auto;
+}
+.section-6 {
+  width:100%;
+  height:32vw;
+  background-image:url(./img/스벅메인슬로건.png);
+  background-position:center;
+  background-size:100% auto;
+}
+.section-7 {
+  width:100%;
+  height:32vw;
+  background-image:url(./img/스벅메인슬로건.png);
+  background-position:center;
+  background-size:100% auto;
+}
+.section-8 {
+  width:100%;
+  height:32vw;
+  background-image:url(./img/스벅메인슬로건.png);
+  background-position:center;
+  background-size:100% auto;
+}
