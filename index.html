@@ -22,13 +22,13 @@
             <a href = "#" class = "no-border no-padding"><button>Q</button></a>
           </div>
           <div class = "second-nav">
-            <a href = "#">COFFEE</a>
-            <a href = "#">MENU</a>
-            <a href = "#">STORE</a>
-            <a href = "#">RESPONSIBILITY</a>
-            <a href = "#">STARBUCKS REWARDS</a>
-            <a href = "#">CORPORATE SALES</a>
-            <a href = "#" class = "no-padding">WHAT'S NEW</a>
+            <a href = "#" class = "down-show">COFFEE</a>
+            <a href = "#" class = "down-show">MENU</a>
+            <a href = "#" class = "down-show">STORE</a>
+            <a href = "#" class = "down-show">RESPONSIBILITY</a>
+            <a href = "#" class = "down-show">STARBUCKS REWARDS</a>
+            <a href = "#" class = "down-show">CORPORATE SALES</a>
+            <a href = "#" class = "no-padding down-show">WHAT'S NEW</a>
           </div>
 
         </div>
@@ -66,8 +66,30 @@
   <section class = "section-1">
     <img src = "./img/스벅메인레터.png" alt = "" class = main-letter>
     <button>자세히 보기</button>
+    <img src = "./img/핑크자몽피지오.png" alt = "" class = "pinkfizzio">
+    <img src = "./img/피스타치오크림콜드브루.png" alt = "" class = "coldbrew">
+    <img src = "./img/슈크림라떼.png" alt = "" class = "latte">
   </section>
-  <section class = "section-2"></section>
+
+  <section class = "section-2">
+    <div class = "back-black">
+      <h3>공지사항</h3>
+      <ul>
+        <li>개인정보처리방침</li>
+        <li class = "display-none">이용약관</li>
+        <li class = "display-none">점검 안내</li>
+      </ul>
+      <p>+</p>
+    </div>
+
+    <div class = "back-white">
+      <p>스타벅스 프로모션</p>
+      <div class = "back-white-icon">
+        <!--아이콘-->d
+      </div>
+    </div>
+  </section>
+
   <section class = "section-3"></section>
   <section class = "section-4"></section>
   <section class = "section-5"></section>
@@ -78,5 +100,54 @@
 
   </footer>
   
+
+  <script>
+    var a_flag = [false, false, false, false, false, false]
+    var down_flag = false;
+
+    document.querySelectorAll('.down-show')[0].addEventListener('mouseenter', (e)=>{
+      // 마우스가 들어갔을 때 down-nav의 높이를 변경하고, visible로 변경
+      document.querySelector('.down-nav').classList.add('down-nav-show')
+      // a_flag = true;
+    })
+
+    document.querySelectorAll('.down-show')[0].addEventListener('mouseleave', (e)=>{
+      //마우스가 나갔을 때 down-nav의 높이를 원래 hidden으로
+      document.querySelector('.down-nav').classList.remove('down-nav-show')
+      
+    })
+
+    // document.querySelectorAll('.top-nav-inner')[0].addEventListener('mouseover', (e)=>{
+    //   a_flag[0] = false;
+    // })
+
+    // document.querySelectorAll('.down-show')[0].addEventListener('mouseenter', (e)=>{
+    //   //마우스가 들어갔을 때 down-nav의 높이를 변경하고, visible로 변경
+    //   document.querySelector('.down-nav').classList.add('down-nav-show')
+    //   a_flag = true;
+    // })
+
+    // document.querySelectorAll('.down-nav')[0].addEventListener('mouseleave', (e)=>{
+    //   down_flag = true;
+    //   a_flag[0] = false;
+    // })
+
+    // document.querySelectorAll('.down-nav')[0].addEventListener('mouseleave', (e)=>{
+    //   down_flag = false;
+    // })
+
+    //50ms로 변수값을 체크해서 true면 down-nav를 보이게, false면 안보이게
+    //50ms 마다 동작
+    // setInterval(function(){
+    //   if(a_flag[0]==true && down_flag ==false){
+    //     //안보이게
+    //     document.querySelector('.down-nav').classList.remove('down-nav-show')
+    //     console.log('start')
+    //   }else {
+    //     //보이게
+    //     document.querySelector('.down-nav').classList.add('down-nav-show')
+    //   }
+    // }, 50)
+  </script>
 </body>
 </html>
